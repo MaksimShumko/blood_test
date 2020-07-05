@@ -127,7 +127,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ButtonTheme(
               minWidth: 200,
+              height: 45,
               child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => GenderChooser()),

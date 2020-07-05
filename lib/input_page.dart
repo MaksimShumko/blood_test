@@ -1,4 +1,5 @@
 import 'package:blood_test/gender.dart';
+import 'package:blood_test/result_page.dart';
 import 'package:blood_test/tests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,6 +48,26 @@ class InputPage extends StatelessWidget {
                               _EditText(test.name, test.range, test.units),
                         )
                         .toList(),
+                  ),
+                  ButtonTheme(
+                    minWidth: 200,
+                    height: 45,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => ResultPage()),
+                        );
+                      },
+                      color: Colors.red,
+                      child: Text(
+                        "Calculate",
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ),
                   ),
                 ],
               ),

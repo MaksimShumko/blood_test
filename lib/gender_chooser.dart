@@ -60,18 +60,26 @@ class _Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-      minWidth: 200,
-      child: RaisedButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => InputPage(_gender)),
-          );
-        },
-        color: Colors.cyan,
-        child: Text(
-          _name,
-          style: TextStyle(fontSize: 20, color: Colors.white),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5),
+      child: ButtonTheme(
+        minWidth: 200,
+        height: 45,
+        child: FlatButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100),
+            side: BorderSide(color: Colors.cyan),
+          ),
+          highlightColor: Colors.cyanAccent,
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => InputPage(_gender)),
+            );
+          },
+          child: Text(
+            _name,
+            style: TextStyle(fontSize: 20, color: Colors.cyan),
+          ),
         ),
       ),
     );
