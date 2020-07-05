@@ -1,4 +1,5 @@
 import 'package:blood_test/gender.dart';
+import 'package:blood_test/tests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -40,11 +41,12 @@ class InputPage extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      _EditText("Male", Gender.male),
-                      _EditText("Female", Gender.female),
-                      _EditText("Other", Gender.female),
-                    ],
+                    children: getTests(_gender)
+                        .map(
+                          (test) =>
+                              _EditText(test.name, test.range, test.units),
+                        )
+                        .toList(),
                   ),
                 ],
               ),
@@ -58,9 +60,10 @@ class InputPage extends StatelessWidget {
 
 class _EditText extends StatelessWidget {
   final String _name;
-  final Gender _gender;
+  final String _normalRange;
+  final String _units;
 
-  _EditText(this._name, this._gender);
+  _EditText(this._name, this._normalRange, this._units);
 
   @override
   Widget build(BuildContext context) {
@@ -72,9 +75,10 @@ class _EditText extends StatelessWidget {
           signed: false,
         ),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter(RegExp(r'[\d\.,]+'))
+          WhitelistingTextInputFormatter(RegExp(r'[\d\.,]+')),
         ],
         decoration: InputDecoration(
+          suffixText: "$_units [$_normalRange]",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(100),
           ),

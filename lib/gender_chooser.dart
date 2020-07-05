@@ -1,4 +1,4 @@
-import 'package:blood_test/InputPage.dart';
+import 'package:blood_test/input_page.dart';
 import 'package:blood_test/gender.dart';
 import 'package:flutter/material.dart';
 
