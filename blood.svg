@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <g id="blood" transform="translate(54.5 644)" style="isolation: isolate">
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="1024" height="1024" transform="translate(-54.5 -644)" fill="#424b54"/>
+    <path id="Exclusion_1" data-name="Exclusion 1" d="M207.923,620.2C93.274,620.2,0,526.926,0,412.276A293.432,293.432,0,0,1,45.916,254.567L207.923,0,369.93,254.567a293.422,293.422,0,0,1,45.917,157.709C415.847,526.926,322.573,620.2,207.923,620.2Z" transform="translate(249.5 -442.502)" fill="#ffe470"/>
+    <path id="Intersection_1" data-name="Intersection 1" d="M61.742,169.8V111.794H0V58.207H61.742V0h53.449V58.207h61.544v53.587H115.192V169.8Z" transform="translate(369.465 -148.799)" fill="#fff"/>
+  </g>
+</svg>
