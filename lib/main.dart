@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Blood test',
       localizationsDelegates: [
-        AppLocalizations.delegate,
+        L.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
@@ -50,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Text(
-              AppLocalizations.of(context).translate('title'),
+              L.of(context).t('title'),
               style: TextStyle(
                 fontSize: 30,
                 color: Colors.black,
@@ -67,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.only(bottom: 20),
                     child: Text(
-                      'Disclaimer',
+                      L.of(context).t('disclaimer'),
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
@@ -76,11 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Text(
-                    'This mobile app is intended for informational purpose only. '
-                    'It is not, and is not intended, to be a substitute for '
-                    'professional medical advice, diagnosis or treatment. '
-                    'You might have a condition that is not suggested here. '
-                    'Please consult a doctor of you are concerned about your health.',
+                    L.of(context).t('disclaimer_text'),
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black54,
@@ -105,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 color: Colors.red,
                 child: Text(
-                  'Agree and start',
+                  L.of(context).t('agree_and_start'),
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),

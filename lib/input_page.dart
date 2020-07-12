@@ -1,4 +1,5 @@
 import 'package:blood_test/gender.dart';
+import 'package:blood_test/localization.dart';
 import 'package:blood_test/result_page.dart';
 import 'package:blood_test/tests.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class InputPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Text(
-                      'Please provide results of blood test bellow',
+                      L.of(context).t('input_title'),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20,
@@ -64,7 +65,7 @@ class InputPage extends StatelessWidget {
                       },
                       color: Colors.red,
                       child: Text(
-                        "Calculate",
+                        L.of(context).t('calculate'),
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),

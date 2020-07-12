@@ -1,4 +1,12 @@
 {
-  "title": "Blood test",
-  "Message" : "This is English"
+  "title": "Badania krwi",
+  "disclaimer": "Disclaimer",
+  "disclaimer_text": "Ta aplikacja mobilna jest przeznaczona wyłącznie do celów informacyjnych. Nie jest, i nie zamierza, być zamiennikiem profesjonalnej porady lekarskiej, diagnozy lub leczenia. Może występować stan, który nie jest tutaj sugerowany. Jeśli martwisz się o swoje zdrowie, skonsultuj się z lekarzem.",
+  "agree_and_start": "Zgadzam się i zaczynam",
+  "choose_gender": "Proszę wybrać płeć badanej osoby",
+  "male": "Męska",
+  "female": "Żeńska",
+  "other": "Inna",
+  "input_title": "Podaj poniżej wyniki badania krwi",
+  "calculate": "Oblicz"
 }

@@ -1,4 +1,12 @@
 {
   "title": "Blood test",
-  "Message" : "This is English"
+  "disclaimer": "Disclaimer",
+  "disclaimer_text": "This mobile app is intended for informational purpose only. It is not, and is not intended, to be a substitute for professional medical advice, diagnosis or treatment. You might have a condition that is not suggested here. Please consult a doctor if you are concerned about your health.",
+  "agree_and_start": "Agree and start",
+  "choose_gender": "Please choose gender of the examined person",
+  "male": "Male",
+  "female": "Female",
+  "other": "Other",
+  "input_title": "Please provide results of blood test bellow",
+  "calculate": "Calculate"
 }

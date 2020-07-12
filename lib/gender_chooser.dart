@@ -1,5 +1,6 @@
 import 'package:blood_test/input_page.dart';
 import 'package:blood_test/gender.dart';
+import 'package:blood_test/localization.dart';
 import 'package:flutter/material.dart';
 
 class GenderChooser extends StatelessWidget {
@@ -23,7 +24,7 @@ class GenderChooser extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Text(
-                      'Please choose gender of the examined person',
+                      L.of(context).t('choose_gender'),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20,
@@ -37,9 +38,9 @@ class GenderChooser extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _Button("Male", Gender.male),
-                      _Button("Female", Gender.female),
-                      _Button("Other", Gender.female),
+                      _Button(L.of(context).t('male'), Gender.male),
+                      _Button(L.of(context).t('female'), Gender.female),
+                      _Button(L.of(context).t('other'), Gender.female),
                     ],
                   ),
                 ],
