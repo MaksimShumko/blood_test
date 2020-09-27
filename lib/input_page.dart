@@ -59,8 +59,7 @@ class InputPage extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => ResultPage()),
+                          MaterialPageRoute(builder: (context) => ResultPage()),
                         );
                       },
                       color: Colors.red,
@@ -82,7 +81,7 @@ class InputPage extends StatelessWidget {
 
 class _EditText extends StatelessWidget {
   final String _name;
-  final String _normalRange;
+  final Range _normalRange;
   final String _units;
 
   _EditText(this._name, this._normalRange, this._units);
@@ -97,7 +96,7 @@ class _EditText extends StatelessWidget {
           signed: false,
         ),
         inputFormatters: <TextInputFormatter>[
-          WhitelistingTextInputFormatter(RegExp(r'[\d\.,]+')),
+          FilteringTextInputFormatter.allow(RegExp(r'[\d\.,]+')),
         ],
         decoration: InputDecoration(
           suffixText: "$_units [$_normalRange]",
