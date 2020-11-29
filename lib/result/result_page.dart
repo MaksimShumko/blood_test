@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
-  ResultPage();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -35,7 +35,7 @@ class _InputForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<InputPageBloc, InputPageStatus>(
       listener: (BuildContext context, state) {
-        if (state == InputPageStatus.authenticated) {
+        if (state == InputPageStatus.calculated) {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => ResultPage()));
         }
@@ -48,55 +48,20 @@ class _InputForm extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
             Center(
-              child: BlocBuilder<InputPageBloc, InputPageStatus>(
-                builder: (context, state) {
-                  return Column(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  _TitleTextWidget(),
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Text(
-                          L.of(context).t('input_title'),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black54,
-                            letterSpacing: 1.2,
-                            wordSpacing: 1.2,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: getTests(_gender).map((test) {
-                          return _EditTextWidget(
-                              test.name, test.range, test.units);
-                        }).toList(),
-                      ),
-                      ButtonTheme(
-                        minWidth: 200,
-                        height: 45,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          onPressed: () {
-                            context
-                                .read<InputPageBloc>()
-                                .add(InputPageEvent.calculate);
-                          },
-                          color: Colors.red,
-                          child: Text(
-                            L.of(context).t('calculate'),
-                            style: TextStyle(fontSize: 20, color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                },
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: getTests(_gender).map((test) {
+                      return _EditTextWidget(test);
+                    }).toList(),
+                  ),
+                  _CalculateButtonWidget(),
+                ],
               ),
             ),
           ],
@@ -106,12 +71,29 @@ class _InputForm extends StatelessWidget {
   }
 }
 
-class _EditTextWidget extends StatelessWidget {
-  final String _name;
-  final Range _normalRange;
-  final String _units;
+class _TitleTextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40),
+      child: Text(
+        L.of(context).t('input_title'),
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.black54,
+          letterSpacing: 1.2,
+          wordSpacing: 1.2,
+        ),
+      ),
+    );
+  }
+}
 
-  _EditTextWidget(this._name, this._normalRange, this._units);
+class _EditTextWidget extends StatelessWidget {
+  final Test _test;
+
+  _EditTextWidget(this._test);
 
   @override
   Widget build(BuildContext context) {
@@ -126,10 +108,34 @@ class _EditTextWidget extends StatelessWidget {
           FilteringTextInputFormatter.allow(RegExp(r'[\d\.,]+')),
         ],
         decoration: InputDecoration(
-          suffixText: "$_units [$_normalRange]",
+          suffixText: "${_test.units} [${_test.range}]",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
           contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          labelText: _name,
+          labelText: _test.name,
+        ),
+        onChanged: (value) => context
+            .read<InputPageBloc>()
+            .add(TestValueChangedEvent(_test, value)),
+      ),
+    );
+  }
+}
+
+class _CalculateButtonWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ButtonTheme(
+      minWidth: 200,
+      height: 45,
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+        onPressed: () {
+          context.read<InputPageBloc>().add(CalculateEvent());
+        },
+        color: Colors.red,
+        child: Text(
+          L.of(context).t('calculate'),
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
     );
