@@ -38,8 +38,8 @@ class ResultPage extends StatelessWidget {
                     height: 45,
                     child: FlatButton(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          side: BorderSide(color: Colors.amber),
+                        borderRadius: BorderRadius.circular(100),
+                        side: BorderSide(color: Colors.amber),
                       ),
                       highlightColor: Colors.amberAccent,
                       onPressed: () {

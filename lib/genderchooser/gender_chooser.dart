@@ -1,6 +1,6 @@
-import 'package:blood_test/input_page.dart';
-import 'package:blood_test/gender.dart';
-import 'package:blood_test/localization.dart';
+import 'package:blood_test/data/gender.dart';
+import 'package:blood_test/input/input_page.dart';
+import 'package:blood_test/localization/localization.dart';
 import 'package:flutter/material.dart';
 
 class GenderChooser extends StatelessWidget {
@@ -38,9 +38,9 @@ class GenderChooser extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _Button(L.of(context).t('male'), Gender.male),
-                      _Button(L.of(context).t('female'), Gender.female),
-                      _Button(L.of(context).t('other'), Gender.female),
+                      _ButtonWidget(L.of(context).t('male'), Gender.male),
+                      _ButtonWidget(L.of(context).t('female'), Gender.female),
+                      _ButtonWidget(L.of(context).t('other'), Gender.female),
                     ],
                   ),
                 ],
@@ -53,11 +53,11 @@ class GenderChooser extends StatelessWidget {
   }
 }
 
-class _Button extends StatelessWidget {
+class _ButtonWidget extends StatelessWidget {
   final String _name;
   final Gender _gender;
 
-  _Button(this._name, this._gender);
+  _ButtonWidget(this._name, this._gender);
 
   @override
   Widget build(BuildContext context) {
