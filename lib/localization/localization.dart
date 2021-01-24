@@ -16,20 +16,23 @@ class L {
   static const LocalizationsDelegate<L> delegate = _AppLocalizationsDelegate();
 
   Map<String, String> _localizedStrings;
+  Map<String, String> _defaultLocalizedStrings;
 
-  Future<bool> load() async {
-    String jsonString =
-        await rootBundle.loadString('i18n/${locale.languageCode}.json');
+  Future loadAll() async {
+    _localizedStrings = await load(locale.languageCode);
+    _defaultLocalizedStrings = await load('en');
+  }
+
+  Future<Map<String, String>> load(String languageCode) async {
+    String jsonString = await rootBundle.loadString('i18n/$languageCode.json');
     Map<String, dynamic> jsonMap = json.decode(jsonString);
-
-    _localizedStrings = jsonMap.map((key, value) {
+    return jsonMap.map((key, value) {
       return MapEntry(key, value.toString());
     });
-    return true;
   }
 
   String t(String key) {
-    return _localizedStrings[key];
+    return _localizedStrings[key] ?? _defaultLocalizedStrings[key];
   }
 }
 
@@ -44,7 +47,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<L> {
   @override
   Future<L> load(Locale locale) async {
     L localizations = L(locale);
-    await localizations.load();
+    await localizations.loadAll();
     return localizations;
   }
 
