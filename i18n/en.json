@@ -8,5 +8,14 @@
   "female": "Female",
   "other": "Other",
   "input_title": "Please provide results of blood test bellow",
-  "calculate": "Calculate"
+  "calculate": "Calculate",
+  "alt_below_reason": "",
+  "alt_above_reason": "gallstone (from 200 to 400 U/l)\ncirrhosis of the liver (from 200 to 400 U/l)\nliver cancer (from 200 to 400 U/l)\nliver cyst (from 200 to 400 U/l)\nacute viral hepatitis (from 400 to 4000 U/l)\nsepsis\ninfectious mononucleosis\ninflammation of the pancreas\nliver damage, e.g. fungi or chemicals (400 to 4000 U/l)\ncirculatory failure (from 400 to 4000 U/l)\nmyocardial necrosis, e.g. after heart attacks and cardiac surgery\nskeletal muscle damage",
+  "ast_below_reason": "",
+  "ast_above_reason": "viral or autoimmune hepatitis\nneoplasms and metastases of neoplasms to the liver\nliver cirrhosis\ncholangitis\nskeletal muscle damage\ninfectious mononucleosis\nhypoxia (hypoxia)\nrenal failure\npancreatitis\npulmonary embolism\ncirculatory failure",
+  "ggt_below_reason": "",
+  "ggt_above_reason": "acute or chronic pancreatitis or hepatitis\ninfectious mononucleosis\npeptic ulcer disease\nalcoholism",
+  "amy_below_reason": "liver disease\nkidney problems\ncystic fibrosis\ntaking certain medications",
+  "amy_above_reason": "inflammation of the gallbladder\ncholelithiasis\nperitonitis\nacute condition of chronic pancreatitis\nketoacidosis in diabetes\nobstruction in the intestine or the pancreatic fluid tube\nrupture of duodenal ulcer or stomach\nEctopic pregnancy\nneoplastic disease (pancreatic cancer, thyroid cancer, ovarian cancer, prostate cancer, lung cancer)",
+  "finish": "Finish"
 }

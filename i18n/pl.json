@@ -8,5 +8,14 @@
   "female": "Żeńska",
   "other": "Inna",
   "input_title": "Podaj poniżej wyniki badania krwi",
-  "calculate": "Oblicz"
+  "calculate": "Oblicz",
+  "alt_below_reason": "",
+  "alt_above_reason": "kamicę przewodu żółciowego (od 200 do 400 U/l)\nmarskość wątroby (od 200 do 400 U/l)\nnowotwory wątroby (od 200 do 400 U/l)\ntorbiel wątroby (od 200 do 400 U/l)\nostre wirusowe zapalenie wątroby (od 400 do 4000 U/l)\nsepsę\nmononukleozę zakaźną\nzapalenie trzustki\nuszkodzenie wątroby, np. grzybami lub chemikaliami (od 400 do 4000 U/l)\nniewydolność krążenia (od 400 do 4000 U/l)\nmartwicę mięśnia sercowego, np. po zawałach i zabiegach kardiochirurgicznych\nuszkodzenia mięśni szkieletowych",
+  "ast_below_reason": "",
+  "ast_above_reason": "wirusowe lub autoimmunologiczne zapalenie wątroby\nnowotwory i przerzuty nowotworów do wątroby\nmarskość wątroby\nzapalenie dróg żółciowych\nuszkodzeniach mięśni szkieletowych\nmononukleozie zakaźnej\nhipoksji (niedotlenieniu)\nniewydolności nerek\nzapalenie trzustki\nzatorowości płucnej\nniewydolności krążenia",
+  "ggt_below_reason": "",
+  "ggt_above_reason": "ostre lub przewlekłe zapalenie trzustki lub zapalenie wątroby\nmononukleozę zakaźną\nchorobę wrzodową\nchorobę alkoholową",
+  "amy_below_reason": "schorzenia wątroby\nschorzenia nerek\nmukowiscydozą\nprzyjmowaniem niektórych leków",
+  "amy_above_reason": "zapalenie pęcherzyka żółciowego\nkamica żółciowa;\nzapalenie otrzewnej\nostry stan przewlekłego zapalenia trzustki\nkwasica ketonowa w cukrzycy\nniedrożność jelit lub przewodu wyprowadzającego sok trzustkowy\npęknięcie wrzodu dwunastnicy albo żołądka\n ciąża pozamaciczna\nchoroba nowotworowa (nowotwór trzustki, nowotwór tarczycy, nowotwór jajnika, nowotwór gruczołu krokowego, nowotwór płuc)",
+  "finish": "Zakończ"
 }

@@ -13,8 +13,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  rxdart: 0.24.1
-  bloc: 6.1.0
+  rxdart: 0.25.0
+  bloc: 6.1.1
   flutter_bloc: 6.1.1
 
 dev_dependencies:

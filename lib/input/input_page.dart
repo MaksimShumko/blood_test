@@ -35,9 +35,10 @@ class _InputForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<InputPageBloc, InputPageStatus>(
       listener: (BuildContext context, state) {
-        if (state == InputPageStatus.calculated) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ResultPage()));
+        if (state is InputPageStatusCalculated) {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => ResultPage(state.tests)),
+          );
         }
       },
       child: SafeArea(
@@ -56,7 +57,7 @@ class _InputForm extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: getTests(_gender).map((test) {
+                    children: getTests(context, _gender).map((test) {
                       return _EditTextWidget(test);
                     }).toList(),
                   ),

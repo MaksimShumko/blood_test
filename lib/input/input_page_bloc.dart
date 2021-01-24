@@ -3,8 +3,7 @@ import 'package:blood_test/data/tests.dart';
 
 abstract class InputPageEvent {}
 
-class CalculateEvent extends InputPageEvent {
-}
+class CalculateEvent extends InputPageEvent {}
 
 class TestValueChangedEvent extends InputPageEvent {
   final Test test;
@@ -13,20 +12,30 @@ class TestValueChangedEvent extends InputPageEvent {
   TestValueChangedEvent(this.test, this.value);
 }
 
-enum InputPageStatus { calculated, unknown }
+abstract class InputPageStatus {}
+
+class InputPageStatusCalculated extends InputPageStatus {
+  final Map<Test, double> tests;
+
+  InputPageStatusCalculated(this.tests);
+}
+
+class InputPageStatusUnknown extends InputPageStatus {}
 
 class InputPageBloc extends Bloc<InputPageEvent, InputPageStatus> {
-  final Map<Test, String> _map = Map();
+  final Map<Test, double> _tests = Map();
 
-  InputPageBloc() : super(InputPageStatus.unknown);
+  InputPageBloc() : super(InputPageStatusUnknown());
 
   @override
   Stream<InputPageStatus> mapEventToState(InputPageEvent event) async* {
     if (event is CalculateEvent) {
-      print(_map);
-      yield InputPageStatus.calculated;
+      yield InputPageStatusCalculated(_tests);
     } else if (event is TestValueChangedEvent) {
-      _map[event.test] = event.value;
+      final value = double.tryParse(event.value);
+      if (value != null) {
+        _tests[event.test] = value;
+      }
     }
   }
 }
